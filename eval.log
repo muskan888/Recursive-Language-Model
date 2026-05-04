@@ -1,0 +1,59 @@
+root model: anthropic/claude-haiku-4.5
+sub  model: anthropic/claude-haiku-4.5
+lengths: [4000, 16000, 64000]   n per cell: 8   methods: ['baseline', 'rlm-no-sub', 'rlm']
+
+>>> running sniah
+
+  [sniah/baseline/4000c] ........ 100.0%  (10.0s)
+
+  [sniah/baseline/16000c] ........ 100.0%  (10.2s)
+
+  [sniah/baseline/64000c] ........ 100.0%  (12.5s)
+
+  [sniah/rlm-no-sub/4000c] ........ 100.0%  (69.4s)
+
+  [sniah/rlm-no-sub/16000c] ........ 100.0%  (78.0s)
+
+  [sniah/rlm-no-sub/64000c] ........ 100.0%  (107.6s)
+
+  [sniah/rlm/4000c] ........ 100.0%  (49.6s)
+
+  [sniah/rlm/16000c] ........ 100.0%  (58.3s)
+
+  [sniah/rlm/64000c] ........ 100.0%  (110.2s)
+
+=== SNIAH — accuracy % (n per cell shown in header) ===
+method            4000c   16000c   64000c
+-----------------------------------------
+baseline        100.0%  100.0%  100.0%
+rlm-no-sub      100.0%  100.0%  100.0%
+rlm             100.0%  100.0%  100.0%
+
+>>> running oolong
+
+  [oolong/baseline/4000c] ........ 0.0%  (9.1s)
+
+  [oolong/baseline/16000c] ........ 0.0%  (24.7s)
+
+  [oolong/baseline/64000c] ........ 0.0%  (21.5s)
+
+  [oolong/rlm-no-sub/4000c] ........ 50.0%  (71.9s)
+
+  [oolong/rlm-no-sub/16000c] ........ 50.0%  (74.6s)
+
+  [oolong/rlm-no-sub/64000c] ........ 75.0%  (71.7s)
+
+  [oolong/rlm/4000c] ........ 87.5%  (201.5s)
+
+  [oolong/rlm/16000c] ........ 62.5%  (155.8s)
+
+  [oolong/rlm/64000c] ........ 25.0%  (331.3s)
+
+=== OOLONG — accuracy % (n per cell shown in header) ===
+method            4000c   16000c   64000c
+-----------------------------------------
+baseline          0.0%    0.0%    0.0%
+rlm-no-sub       50.0%   50.0%   75.0%
+rlm              87.5%   62.5%   25.0%
+
+Total time: 1468.5s
